@@ -17,9 +17,11 @@ install:
 		github.com/DATA-DOG/go-sqlmock \
 		github.com/onsi/ginkgo/ginkgo \
 		github.com/onsi/gomega/... \
-		github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock 
+		github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock \
+		golang.org/x/crypto/bcrypt
 	go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock
 	go get -tags 'mysql' -u github.com/golang-migrate/migrate/cmd/migrate
+	go get gopkg.in/go-playground/validator.v9
 
 clean:
 	rm ./pb/**/*.pb.go
